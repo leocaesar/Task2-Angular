@@ -1,0 +1,68 @@
+<h2>{{ title }} berjumlah {{ listKaryawan.length }} nama</h2>
+
+<div>
+  <div [hidden]="submitted">
+    <h1>Karyawan form</h1>
+    <form (ngSubmit)="onSubmit()" #karyawanForm="ngForm">
+      <div class="form-group">
+        <label for="name">First Name <br></label>
+        <input type="text" id="name" required [(ngModel)]="karyawanModel.name" name="name" #name="ngModel">
+        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+          FirstName is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="skill">Last Name</label>
+        <input type="text" class="" id="skill" required [(ngModel)]="karyawanModel.skill" name="skill" #skill="ngModel">
+        <div [hidden]="skill.valid || skill.pristine" class="alert alert-danger">
+          LastName is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input class="" type="text" id="phone" required [(ngModel)]="karyawanModel.phone" name="phone" #phone="ngModel">
+        <div [hidden]="phone.valid || phone.pristine" class="alert alert-danger">
+          Phone is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="notes">Notes</label>
+        <input class="" type="text" id="notes" required [(ngModel)]="karyawanModel.notes" name="notes" #notes="ngModel">
+        <div [hidden]="notes.valid || notes.pristine" class="alert alert-danger">
+          Phone is required
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!karyawanForm.form.valid">
+        Submit
+      </button>
+    </form>
+  </div>
+  <!--  <div [hidden]="!submitted">-->
+  <!--    <h2>Berikut adalah data yang sudah anda kirim</h2>-->
+  <!--    <div class="">-->
+  <!--      <div>Name</div>-->
+  <!--      <div>{{karyawanModel.name}}</div>-->
+  <!--    </div>-->
+  <!--  </div>-->
+</div>
+<div class="container">
+
+  <div *ngFor="let karyawan of listKaryawan">
+    <ul class="list-group ">
+      <li class="list-group-item list-group-item-dark">{{karyawan.id}}</li>
+      <li class="list-group-item list-group-item-dark">{{karyawan.name}}</li>
+      <li class="list-group-item list-group-item-dark">{{karyawan.skill}}</li>
+      <li class="list-group-item list-group-item-dark">{{karyawan.phone}}</li>
+      <li class="list-group-item list-group-item-dark">{{karyawan.notes}}</li>
+      <li class="list-group-item list-group-item-dark">
+        <button class="btn btn-warning" (click)="updateKaryawan(karyawan.id)">Update</button>
+      </li>
+      <li class="list-group-item list-group-item-dark">
+        <button class="btn btn-danger" (click)="deleteKaryawan(karyawan.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+
+</div>

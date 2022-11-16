@@ -1,0 +1,42 @@
+<div>
+  <h1>Karyawan form</h1>
+  <form (ngSubmit)="updateKaryawan()" #karyawanForm="ngForm">
+
+
+    <input type="text" id="id" required [(ngModel)]="karyawanModel.id" name="id" #id="ngModel" >
+
+    <div class="form-group">
+      <label for="name">First Name <br></label>
+      <input type="text" id="name"  required [(ngModel)]="karyawanModel.name" name="name" #name="ngModel" >
+      <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+        FirstName is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="skill">Last Name</label>
+      <input type="text" class="" id="skill" required [(ngModel)]="karyawanModel.skill" name="skill" #skill="ngModel">
+      <div [hidden]="skill.valid || skill.pristine" class="alert alert-danger">
+        LastName is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input class="" type="text" id="phone" required [(ngModel)]="karyawanModel.phone" name="phone" #phone="ngModel">
+      <div [hidden]="phone.valid || phone.pristine" class="alert alert-danger">
+        Phone is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="notes">Notes</label>
+      <input class="" type="text" id="notes" required [(ngModel)]="karyawanModel.notes" name="notes" #notes="ngModel">
+      <div [hidden]="notes.valid || notes.pristine" class="alert alert-danger">
+        Phone is required
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!karyawanForm.form.valid">
+      Submit
+    </button>
+  </form>
+</div>

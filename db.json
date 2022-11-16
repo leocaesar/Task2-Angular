@@ -1,0 +1,44 @@
+{
+  "karyawan": [
+    {
+      "id": 2,
+      "name": "Eddie",
+      "phone": "25565115",
+      "skill": "Devops Engineer",
+      "notes": "he has quality to maintain production environment"
+    },
+    {
+      "name": "dsa",
+      "skill": "dsa",
+      "phone": "321",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "name": "Eusebio",
+      "phone": "25565115",
+      "skill": "Angular Developer",
+      "notes": "he has quality to build angular application"
+    },
+    {
+      "id": 5,
+      "name": "Venom",
+      "phone": "25565115",
+      "skill": "Java Developer",
+      "notes": "he has quality to build java application"
+    },
+    {
+      "id": 6,
+      "name": "Richard",
+      "phone": "25565115",
+      "skill": "React Developer",
+      "notes": "he has quality to build react application"
+    },
+    {
+      "name": "name1",
+      "skill": "skill1",
+      "phone": "phone1",
+      "id": 7
+    }
+  ]
+}
